@@ -1,16 +1,18 @@
 import { ReactElement } from "react";
-import ProgressComponent from "../../components/ProgressComponent";
 import ReviewComponent from "../../components/ReviewComponent";
 
 type ReviewPageProps = {
-  setPageType: Function;
+ shippingInfo: any,
+ paymentInfo: any 
 };
 
-export const ReviewPage = ({ setPageType }: ReviewPageProps): ReactElement => {
+export const ReviewPage = ({ shippingInfo, paymentInfo }: ReviewPageProps): ReactElement => {
   return (
     <>
-      <ProgressComponent progressType="review" />
-      <ReviewComponent setPageType={setPageType} />
+      <ReviewComponent
+          shippingInfo
+          paymentInfo
+      />
     </>
   );
 };

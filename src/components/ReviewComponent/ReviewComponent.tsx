@@ -1,25 +1,20 @@
-import { ReactElement } from "react";
-import { Row, Column, Button } from "carbon-components-react";
+import { ReactElement } from 'react';
 
 type ReviewComponentProps = {
-  setPageType: Function;
+   shippingInfo: any,
+   paymentInfo: any
 };
 
 export const ReviewComponent = ({
-  setPageType,
+    shippingInfo,
+    paymentInfo
 }: ReviewComponentProps): ReactElement => {
-  return (
-    <>
-      <Row className="flex">
-        <Column>
-          <Button kind="secondary" onClick={() => setPageType("payment")}>
-            Back to payment
-          </Button>
-        </Column>
-        <Column>
-          <Button onClick={() => setPageType("complete")}>Submit order</Button>
-        </Column>
-      </Row>
-    </>
-  );
+    return (
+        <>
+            <div className="complete-wrapper">
+                <h1 className="flex justify-center">Your order is complete</h1>
+                <h2 className="flex justify-center padding-bottom-1">Thank you</h2>
+            </div>
+        </>
+    );
 };

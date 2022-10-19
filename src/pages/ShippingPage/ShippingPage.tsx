@@ -1,24 +1,22 @@
 import { ReactElement } from "react";
-import ProgressComponent from "../../components/ProgressComponent";
 import ShippingComponent from "../../components/ShippingComponent";
 import { ShippingInfo } from "../../models/shippingInfo";
 
 type ShippingPageProps = {
-  setPageType: Function;
+  setPageNumber: Function;
   shippingInfo: ShippingInfo;
   setShippingInfo: Function;
 };
 
 export const ShippingPage = ({
-  setPageType,
+  setPageNumber,
   shippingInfo,
   setShippingInfo,
 }: ShippingPageProps): ReactElement => {
   return (
     <>
-      <ProgressComponent progressType="shipping" />
       <ShippingComponent
-        setPageType={setPageType}
+        setPageNumber={setPageNumber}
         shippingInfo={shippingInfo}
         setShippingInfo={setShippingInfo}
       />

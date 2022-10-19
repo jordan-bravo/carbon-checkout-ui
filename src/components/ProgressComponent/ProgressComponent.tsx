@@ -1,40 +1,44 @@
-import { ReactElement } from "react";
+import { Dispatch, ReactElement, SetStateAction } from 'react';
 import {
-  Row,
-  Column,
-  ProgressIndicator,
-  ProgressStep,
-} from "carbon-components-react";
+    Row,
+    Column,
+    ProgressIndicator,
+    ProgressStep,
+} from 'carbon-components-react';
 
 type ProgressComponentProps = {
-  progressType: string;
-};
-
-const getProgressIndexFromType = (progressType: string): number => {
-  if (progressType === "cart") return 0;
-  else if (progressType === "shipping") return 1;
-  else if (progressType === "payment") return 2;
-  else if (progressType === "review") return 3;
-  else return 0;
+    pageNumber: number;
+    setPageNumber: Dispatch<SetStateAction<number>>;
 };
 
 export const ProgressIndicatorComponent = ({
-  progressType,
+    pageNumber,
+    setPageNumber,
 }: ProgressComponentProps): ReactElement => {
-  return (
-    <>
-      <Row>
-        <Column>
-          <ProgressIndicator
-            currentIndex={getProgressIndexFromType(progressType)}
-          >
-            <ProgressStep label="Cart" />
-            <ProgressStep label="Shipping" />
-            <ProgressStep label="Payment" />
-            <ProgressStep label="Review" />
-          </ProgressIndicator>
-        </Column>
-      </Row>
-    </>
-  );
+    return (
+        <>
+            <Row>
+                <Column>
+                    <ProgressIndicator currentIndex={pageNumber}>
+                        <ProgressStep
+                            label="Cart"
+                            onClick={() => setPageNumber(0)}
+                        />
+                        <ProgressStep
+                            label="Shipping"
+                            onClick={() => setPageNumber(1)}
+                        />
+                        <ProgressStep
+                            label="Payment"
+                            onClick={() => setPageNumber(2)}
+                        />
+                        <ProgressStep
+                            label="Complete"
+                            onClick={() => setPageNumber(3)}
+                        />
+                    </ProgressIndicator>
+                </Column>
+            </Row>
+        </>
+    );
 };

@@ -2,13 +2,67 @@
 @import "carbon-components/scss/globals/scss/vendor/@carbon/layout/scss/breakpoint.scss";
 @import "carbon-components/scss/globals/scss/typography.scss";
 @import "carbon-components/scss/globals/scss/vars.scss";
-@import "./components/ShippingComponent/shipping-component.scss";
-// $ui-background: #f4f4f4;
-
-// .bx--content {
-//   background: #f4f4f4;
-// }
 
 .flex {
   display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.page-wrapper {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.page-type-wrapper {
+  min-height: 30rem;
+}
+.visibility-hidden {
+  visibility: hidden;
+}
+.margin-top-3 {
+  margin-top: 3rem;
+}
+.margin-bottom-3 {
+  margin-bottom: 3rem;
+}
+.min-height-4 {
+  min-height: 4rem;
+}
+.count-number {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.padding-top-3 {
+  padding-top: 3rem;
+}
+.buttons {
+  min-height: 0.5rem;
+  padding: 1rem;
+}
+.padding-right-1 {
+  padding-right: 1rem;
+}
+.width-12 {
+  width: 12rem;
+}
+.complete-wrapper {
+  margin-top: -15rem;
+}
+.margin-top-1 {
+  margin-top: 1rem;
+}
+.margin-bottom-1 {
+  margin-bottom: 1rem;
 }

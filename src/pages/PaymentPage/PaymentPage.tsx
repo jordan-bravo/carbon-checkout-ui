@@ -1,18 +1,23 @@
 import { ReactElement } from "react";
-import ProgressComponent from "../../components/ProgressComponent";
 import PaymentComponent from "../../components/PaymentComponent";
 
 type PaymentPageProps = {
-  setPageType: Function;
+  setPageNumber: Function;
+  paymentInfo: any
+  setPaymentInfo: any
 };
 
 export const PaymentPage = ({
-  setPageType,
+  setPageNumber,
+  paymentInfo,
+  setPaymentInfo
 }: PaymentPageProps): ReactElement => {
   return (
     <>
-      <ProgressComponent progressType="payment" />
-      <PaymentComponent setPageType={setPageType} />
+      <PaymentComponent setPageNumber={setPageNumber} 
+      paymentInfo={paymentInfo}
+      setPaymentInfo={setPaymentInfo}
+      />
     </>
   );
 };

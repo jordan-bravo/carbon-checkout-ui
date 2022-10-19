@@ -1,32 +1,26 @@
-import { ReactElement } from "react";
-import { Select, SelectItem } from "carbon-components-react";
-import { listOfUnitedStates } from "../../data/listOfUnitedStates";
+import { ReactElement, useState } from 'react';
+import { Dropdown } from 'carbon-components-react';
+import { listOfUnitedStates } from '../../data/listOfUnitedStates';
 
 type SelectUnitedStateComponentProps = {
-  onChangeHandlerState: Function;
+    onChangeHandlerState: Function;
 };
 
 export const SelectUnitedStateComponent = ({
-  onChangeHandlerState,
+    onChangeHandlerState,
 }: SelectUnitedStateComponentProps): ReactElement => {
-  return (
-    <Select
-      id="state"
-      labelText="State"
-      defaultValue="test"
-      onChange={(e): void => onChangeHandlerState(e)}
-    >
-      {/* TODO selected state value (i.e. shippingInfo.state) should persist when switching pages */}
-      <SelectItem hidden text="Select State" value="placeholder-item" />
-      {listOfUnitedStates.map((element) => {
-        return (
-          <SelectItem
-            key={element.value}
-            text={element.text}
-            value={element.value}
-          />
-        );
-      })}
-    </Select>
-  );
+    const [currentItem, setCurrentItem] = useState({ id: 'select', text: 'Select'});
+    return (
+        <>
+            <Dropdown
+                items={listOfUnitedStates}
+                itemToString={(item) => (item ? item.text : '')}
+                id="state"
+                label="Select State"
+                titleText="State"
+                // onChange={({ selectedItem }) => setCurrentItem(selectedItem)}
+                // selectedItem={currentItem}
+            />
+        </>
+    );
 };

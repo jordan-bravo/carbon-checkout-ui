@@ -15,7 +15,7 @@ import {
 export const HeaderComponent = (): ReactElement => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <Header aria-label="Carbon Tutorial">
+      <Header aria-label="Carbon Checkout">
         <SkipToContent />
         <HeaderMenuButton
           aria-label="Open menu"
@@ -25,7 +25,7 @@ export const HeaderComponent = (): ReactElement => (
         <HeaderName href="/" prefix="IBM">
           Shopping Experience
         </HeaderName>
-        <HeaderNavigation aria-label="Carbon Tutorial">
+        <HeaderNavigation aria-label="Carbon Checkout">
           {/* <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem> */}
         </HeaderNavigation>
         <SideNav
